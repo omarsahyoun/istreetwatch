@@ -1,6 +1,6 @@
 #iStreetWatch
 
-iStreetWatch uses __ruby 2.3.0__ 
+iStreetWatch uses __ruby 2.3.0__
 
 ## Running iStreetWatch locally
 
@@ -32,3 +32,8 @@ iStreetWatch uses __ruby 2.3.0__
 
  `bin/rails s`
 
+ * For twitter feed:
+ ```
+ $ export to $CONSUMER_KEY your key here
+ $ export to $CONSUMER_SECRET your secret key here
+ ```
