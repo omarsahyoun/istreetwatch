@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :reports
   end
+
+  get '/what_next', to:'home#what_next'
 end
