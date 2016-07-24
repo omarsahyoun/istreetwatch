@@ -33,7 +33,5 @@ iStreetWatch uses __ruby 2.3.0__
  `bin/rails s`
 
  * For twitter feed:
- ```
- $ export to $CONSUMER_KEY your key here
- $ export to $CONSUMER_SECRET your secret key here
- ```
+
+  Create a .env file and add your $CONSUMER_KEY, $CONSUMER_SECRET, TWIT_ACCESS_TOKEN and TWIT_ACCESS_SECRET from https://dev.twitter.com/

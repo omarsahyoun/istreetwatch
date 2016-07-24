@@ -6,19 +6,16 @@
 </div>
 
 <div id="twitter-box">
-  <blockquote>
-    HERE ARE THE TWEETS!
-  </blockuote>
   <%getting_tweets%>
   <%@tweets.each do |tweet|%>
     <p>
-      <span class="tweet-user"><%= tweet[username] %></span>
-      <span class="tweet-screen-name"><%= tweet[screen_name] %></span>
+      <span class="tweet-user"><%= tweet[:username] %></span>
+      <a href="https://www.twitter.com/<%=tweet[:screen_name]%>"><span class="tweet-screen-name">@<%= tweet[:screen_name] %></span></a>
     </p>
-    <span class="tweet-text"><%= tweet[text] %></span>
-    <span class="tweet-retweet-count"><%= tweet[retweets] %></span>
-    <span class="tweet-favourite-count"><%= tweet[favourites] %></span>
-    <span class="tweet-created-at"><%= tweet[created_at]%></span>
+    <span class="tweet-text"><%= tweet[:text] %></span>
+    <span class="tweet-retweet-count"><%= tweet[:retweets] %></span>
+    <span class="tweet-favourite-count"><%= tweet[:favourites] %></span>
+    <span class="tweet-created-at"><%= tweet[:created_at]%></span>
   <%end%>
 </div>
 
