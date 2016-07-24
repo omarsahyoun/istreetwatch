@@ -1,22 +1,26 @@
+<div id="twitter-box">
+  <%getting_tweets%>
+  <%@tweets.each do |tweet|%>
+    <div class="tweet">
+      <div>
+        <span class="tweet-user"><%= tweet[:username] %></span>
+        <a href="https://www.twitter.com/<%=tweet[:screen_name]%>"><span class="tweet-screen-name">@<%= tweet[:screen_name] %></span></a>
+      </div>
+      <span class="tweet-text"><%= tweet[:text] %></span>
+      <div>
+        <span class="tweet-retweet-count"><%= tweet[:retweets] %></span>
+        <span class="tweet-favourite-count"><%= tweet[:favourites] %></span>
+        <span class="tweet-created-at"><%= tweet[:created_at]%></span>
+      </div>
+    </div>
+  <%end%>
+</div>
+
 <div id="pledge-bar" class="center">
     <span>
       <%= Pledge.counter %> people have pledged to help end street harassment.
       <strong><%= link_to "Will you?", new_pledge_path %></strong>
     </span>
-</div>
-
-<div id="twitter-box">
-  <%getting_tweets%>
-  <%@tweets.each do |tweet|%>
-    <p>
-      <span class="tweet-user"><%= tweet[:username] %></span>
-      <a href="https://www.twitter.com/<%=tweet[:screen_name]%>"><span class="tweet-screen-name">@<%= tweet[:screen_name] %></span></a>
-    </p>
-    <span class="tweet-text"><%= tweet[:text] %></span>
-    <span class="tweet-retweet-count"><%= tweet[:retweets] %></span>
-    <span class="tweet-favourite-count"><%= tweet[:favourites] %></span>
-    <span class="tweet-created-at"><%= tweet[:created_at]%></span>
-  <%end%>
 </div>
 
 <div id="map" style="width: 100%">
@@ -27,6 +31,7 @@
     <i class="material-icons">add</i>
   </a>
 </div>
+
 
 <script>
   var events = <%= Report.latest_for_map.to_json.html_safe %>;
