@@ -10,12 +10,16 @@
     HERE ARE THE TWEETS!
   </blockuote>
   <%getting_tweets%>
-  <%= @username%>
-  <%= @screen_name%>
-  <%= @text%>
-  <%= @retweets%>
-  <%= @favorites%>
-  <%= @created_at%>
+  <%@tweets.each do |tweet|%>
+    <p>
+      <span class="tweet-user"><%= tweet[username] %></span>
+      <span class="tweet-screen-name"><%= tweet[screen_name] %></span>
+    </p>
+    <span class="tweet-text"><%= tweet[text] %></span>
+    <span class="tweet-retweet-count"><%= tweet[retweets] %></span>
+    <span class="tweet-favourite-count"><%= tweet[favourites] %></span>
+    <span class="tweet-created-at"><%= tweet[created_at]%></span>
+  <%end%>
 </div>
 
 <div id="map" style="width: 100%">
