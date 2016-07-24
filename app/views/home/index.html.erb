@@ -1,18 +1,20 @@
 <div id="twitter-box">
   <%getting_tweets%>
   <%@tweets.each do |tweet|%>
+  <a href="<%=tweet[:uri]%>">
     <div class="tweet">
-      <div>
-        <span class="tweet-user"><%= tweet[:username] %></span>
-        <a href="https://www.twitter.com/<%=tweet[:screen_name]%>"><span class="tweet-screen-name">@<%= tweet[:screen_name] %></span></a>
-      </div>
-      <span class="tweet-text"><%= tweet[:text] %></span>
-      <div>
-        <span class="tweet-retweet-count"><%= tweet[:retweets] %></span>
-        <span class="tweet-favourite-count"><%= tweet[:favourites] %></span>
-        <span class="tweet-created-at"><%= tweet[:created_at]%></span>
-      </div>
+        <div class="tweet-user-info">
+          <span class="tweet-user"><%= tweet[:username] %></span>
+          <a href="https://www.twitter.com/<%=tweet[:screen_name]%>"><span class="tweet-screen-name">@<%= tweet[:screen_name] %></span></a>
+        </div>
+        <span class="tweet-text"><%= tweet[:text] %></span>
+        <div class="tweet-info">
+          <span class="tweet-retweet-count"> <%= link_to image_tag('retweet.png', height: 10, alt: "retweet"), root_path, class: 'twitter-retweet' %><%= tweet[:retweets] %></span>
+          <span class="tweet-favourite-count"> <%= link_to image_tag('like.png', height: 10, alt: "like"), root_path, class: 'twitter-like' %> <%= tweet[:favorites] %></span>
+          <span class="tweet-created-at"><%= tweet[:created_at]%></span>
+        </div>
     </div>
+  </a>
   <%end%>
 </div>
 
